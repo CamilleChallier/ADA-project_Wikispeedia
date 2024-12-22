@@ -1,0 +1,562 @@
+/* Custom font */
+@font-face {
+  font-family: 'LinLibReg';
+  src: local('LinLibReg'), 
+       url('linuxlibertine/LinLibertine_R.ttf') format('truetype'),
+}
+
+@font-face {
+  font-family: 'LinLibLight';
+  src: local('LinLibLight'), 
+       url('linuxlibertine/LinLibertine_aDRS.ttf') format('truetype'),
+}
+
+@font-face {
+  font-family: 'LinLibCap';
+  src: local('LinLibCap'), 
+       url('linuxlibertine/LinLibertine_aS.ttf') format('truetype'),
+}
+
+@font-face {
+  font-family: 'OpenSansReg';
+  src: local('OpenSansReg'), 
+       url('opensans/OpenSans-Regular.ttf') format('truetype'),
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.container{
+  width: 70%;
+  margin: auto;
+  overflow: hidden;
+  background-color: #fafaf9;
+}
+
+.bg-container{
+  background-color: #fafaf9;
+}
+
+section {
+  scroll-margin-top: 80px; 
+}
+
+
+/* Header */
+#main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navbar */
+.logo {
+  font-size: 2rem;
+  font-family: 'LinLibCap';
+  color: #333;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap; /* Allow the navbar items to wrap onto the next line */
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 4px;
+  flex-wrap: wrap; /* Ensure the list items can wrap */
+}
+
+.nav-list a {
+  color: #333;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+  font-family: 'LinLibCap';
+  font-size: 16pt;
+}
+
+.nav-list a:hover {
+  color: #28649C;
+}
+
+/* Floating sidebar */
+.sidebar {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  text-align: right;
+}
+
+/* Media query to hide the sidebar */
+@media (max-width: 1100px) {
+  .sidebar {
+      display: none;
+  }
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  text-decoration: none;
+  margin-bottom: 5px;
+  padding: 5px;
+  font-size: 14px;
+  font-family: 'OpenSansReg';
+}
+
+.sidebar section {
+  scroll-margin-top: 80px; /* Accounts for scroll behaviour for heading */
+}
+
+.sidebar a.active {
+  font-weight: bold;
+}
+
+.sidebar a:hover {
+  color: #28649C;
+}
+
+/* Project Title */
+#showcase {
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Full width */
+  margin: 0; /* Remove extra margin */
+  position: relative;
+}
+
+#showcase img {
+  width: 100%; /* Makes the image take the full width */
+  height: auto; /* Maintains aspect ratio */
+}
+
+#showcase h1 {
+  /* font-size: calc(2rem + 1vw); Font size adapts to viewport width */
+  font-size: 3vw;
+  color: #d9d9d9;
+  font-family: 'LinLibCap';
+  font-weight: normal;
+}
+  
+#showcase p {
+  font-size: calc(0.5vw); /* Smaller adaptive font size */
+}
+
+.title {
+  position: absolute;
+  top: 42%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+}
+
+.abstract {
+  position: absolute;
+  text-align: center;
+  top: 83%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'LinLibCap';
+  font-size: 2.4vw;
+}
+
+/* Introduction */
+.intro-container{
+  display: flex;
+  min-height: 750px;
+  align-items: stretch;
+  background-color: #fafaf9;
+}
+
+#introduction {
+  float: left;
+  width: 55%; 
+  color: #000;
+  padding-left: 10vw;
+  margin-bottom: 30px;
+  margin-right: 5vw;
+  position: relative;
+  background-image: url('../images/green.jpg'); 
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 60vw; /* Adjust size as needed */
+}
+
+#introduction h2{
+  font-size: 35px;
+  font-family: "LinLibCap";
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+#introduction p{
+  font-family: "OpenSansReg";
+  text-align: justify;
+  font-size: 16px;
+  padding-bottom: 16px;
+  /* text-indent: 2em */
+}
+
+#introduction a{
+  color: #000;
+}
+
+#research-questions {
+  float: right;
+  width: 40%;
+  color: #000;
+  padding-left: 40px;
+  margin-bottom: 30px;
+
+  box-sizing: border-box;
+  position: relative;
+  background-image: url('../images/blue.jpg'); /* Replace with actual image path */
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 45vw; /* Adjust size as needed */
+}
+
+#research-questions h2{
+  font-size: 35px;
+  font-family: "LinLibCap";
+  font-weight: normal;
+  margin-bottom: 20px;
+  margin-top: 20vw;
+}
+
+#research-questions ol{
+  font-family: "OpenSansReg";
+  text-align: justify;
+  font-size: 16px;
+  margin-right: 10vw;
+  list-style-type: none; /* Remove default numbering */
+  counter-reset: list-counter; /* Initialize the counter */
+}
+
+#research-questions li {
+  padding-left: 40px; /* Space between number and text */
+  position: relative;
+}
+
+#research-questions li::before {
+  content: counter(list-counter) ". "; /* Display the counter followed by a dot */
+  counter-increment: list-counter; /* Increment the counter for each list item */
+  font-size: 24px; /* Change the size of the number */
+  position: absolute;
+  left: 0; /* Position the number to the left of the list item */
+}
+
+
+@media (max-width: 800px) {
+  .intro-container {
+    flex-direction: column; /* Stacks the asides vertically */
+  }
+
+  #introduction, #research-questions {
+    width: 100%; /* Ensures each aside takes the full width */
+  }
+}
+
+/* The Story */
+#story{
+  padding-top: 80px;
+  background-color: #fafaf9; 
+  font-family: "OpenSansReg";
+  text-align: justify;
+  font-size: 16px;
+}
+
+#story h2{
+  text-align: center;
+  font-size: 45px;
+  font-family: 'LinLibCap';
+  padding-bottom: 10px;
+  font-weight: normal;
+}
+
+#story h3{
+  font-size: 35px;
+  font-family: 'LinLibCap';
+  padding-bottom: 15px;
+  font-weight: normal;
+  margin-top: 25px;
+  text-align: left;
+}
+
+#story p{
+  font-family: "OpenSansReg";
+  text-align: justify;
+  font-size: 16px;
+  padding-bottom: 16px;
+  /* text-indent: 2em */
+}
+
+#story a{
+  color: #000;
+}
+
+#story u{
+  text-decoration: underline;
+}
+
+.gradient-text {
+  /* background: linear-gradient(to right, #3458d6, #34d634); */
+  background: linear-gradient(to right, #28649C, #1dc2b1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Top-level ordered list */
+#markov ol {
+  font-family: "OpenSansReg";
+  text-align: justify;
+  font-size: 16px;
+  list-style-type: none; /* Remove default numbering */
+  counter-reset: list-counter; /* Initialize custom counter */
+  margin-left: 0; /* Remove unnecessary left margin */
+  padding-left: 0; /* No padding at the beginning */
+}
+
+/* Top-level list items */
+#markov ol > li {
+  position: relative;
+  margin-bottom: 10px; /* Add spacing between items */
+  padding-left: 30px; /* Indent the text only */
+}
+
+/* Custom numbering for top-level items */
+#markov ol > li::before {
+  content: counter(list-counter) ". "; /* Custom numbering for ordered list */
+  counter-increment: list-counter; /* Increment the counter */
+  font-size: 18px; /* Customize number size */
+  position: absolute;
+  left: 0; /* Position number at the far left */
+}
+
+/* Nested unordered list for bullet points */
+#markov ul {
+  list-style-type: disc; /* Use bullets */
+  margin-left: 30px; /* Indent nested bullets relative to parent */
+  padding-left: 0; /* No extra padding */
+}
+
+/* Nested unordered list items */
+#markov ul li {
+  padding-left: 0; /* Reset padding for bullet text */
+  margin-bottom: 5px; /* Add spacing between bullets */
+}
+
+/* Conclusion */
+#conclusion{
+  padding-top: 80px;
+  padding-bottom: 200px;
+  background-color: #fafaf9; 
+  font-family: "OpenSansReg";
+  text-align: justify;
+  font-size: 16px;
+  width: 80%;
+  margin: auto;
+}
+
+#conclusion h2{
+  text-align: center;
+  font-size: 45px;
+  font-family: 'LinLibCap';
+  padding-bottom: 30px;
+  font-weight: normal;
+}
+
+#conclusion ol{
+  font-family: "OpenSansReg";
+  text-align: justify;
+  font-size: 16px;
+  list-style-type: none; /* Remove default numbering */
+  counter-reset: list-counter; /* Initialize the counter */
+}
+
+#conclusion li {
+  padding-left: 25px; /* Space between number and text */
+  position: relative;
+  margin-bottom: 7px;
+}
+
+#conclusion li::before {
+  content: counter(list-counter) ". "; /* Display the counter followed by a dot */
+  counter-increment: list-counter; /* Increment the counter for each list item */
+  font-size: 18px; /* Change the size of the number */
+  position: absolute;
+  left: 0; /* Position the number to the left of the list item */
+}
+
+/* Footer */
+#main-footer {
+  background-color: #fafaf9;
+  color: #fff;
+  height: 95px; /* Set the height of the footer */
+  position: relative; /* Ensure absolute positioning works within this container */
+}
+
+.left-image {
+  background-image: url('../images/green_footer.jpg');
+  background-size: auto 100%; /* Keep the aspect ratio, scale the height to 100% */
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%; /* Match the height of the footer */
+  width: 250px; /* Keep the natural width */
+  position: absolute; /* Position it to the left */
+  top: 0;
+  left: 0; /* Align to the left side */
+  z-index: 1; /* Ensure it stays behind the .team container */
+}
+
+.right-image {
+  background-image: url('../images/blue_footer.jpg');
+  background-size: auto 100%; /* Keep the aspect ratio, scale the height to 100% */
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%; 
+  width: 250px; 
+  position: absolute; /* Position it to the right */
+  top: 0;
+  right: 0; /* Align to the right side */
+  z-index: 1; /* Ensure it stays behind the .team container */
+}
+
+.team {
+  display: flex;
+  gap: clamp(10px, 5vw, 30px); /* Dynamic gap between team members */
+  width: 100%; /* Ensures it uses the full width available */
+  max-width: 50%; /* Limits maximum width */
+  margin: 0 auto; /* Centers the team container */
+  justify-content: center; /* Distributes space evenly between members */
+  position: relative; /* Creates a new stacking context */
+  z-index: 2; /* Ensures it is above the background images */
+}
+
+.team-member {
+  flex: 1 1 150px; /* Allows team members to resize but keeps a minimum width */
+  text-align: center;
+  padding: 10px; /* Adjusted for better responsiveness */
+}
+
+
+@media (max-width: 1200px) {
+  .team {
+    gap: clamp(8px, 4vw, 25px); /* Adjusted gap for medium screens */
+  }
+}
+
+@media (max-width: 800px) {
+  .team {
+    gap: clamp(5px, 3vw, 20px); /* Further reduced gap for smaller screens */
+    max-width: 90%; /* Uses more of the available width */
+  }
+}
+
+@media (max-width: 600px) {
+  .team {
+    gap: clamp(5px, 2vw, 15px); /* Small gap for very small screens */
+    max-width: 100%; /* Uses full width on very small screens */
+    margin: 0 10px; /* Adds small margins to prevent content from touching edges */
+  }
+}
+
+.first-name {
+  color: #1dc2b1; 
+  font-size: 18px;
+  font-family: 'LinLibCap';
+}
+
+.last-name {
+  color: #28649C; 
+  font-size: 18px;
+  font-family: 'LinLibCap';
+}
+
+.team-member .contact {
+  margin-top: 10px;
+  display: flex; /* Enables flexbox layout */
+  gap: 5px; /* Adds space between the images */
+  justify-content: center; /* Optional: Centers items horizontally */
+  align-items: center; /* Aligns items vertically */
+}
+
+.contact a {
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.contact a img {
+  max-width: 24px; /* Ensures the images stay a manageable size */
+  height: auto; /* Maintains aspect ratio */
+}
+
+.contact img {
+  width: 20px;
+  vertical-align: middle;
+}
+
+/* Plots and text next to each other */
+.plot-container-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plot-container-right {
+  flex: 1.5; 
+  margin-right: 2%; 
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  height: 500px;
+  order : 1
+}
+
+.plot-container-left {
+  flex: 1.5; 
+  margin-right: 2%; 
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  height: 500px;
+  order : 2
+}
+
+.text-container-right {
+  flex: 1; 
+  order : 1
+}
+
+.text-container-left {
+  flex: 1; 
+  order : 2
+}
+
+@media (max-width: 1000px) {
+  .plot-container-wrapper {
+    flex-direction: column;
+    align-items: center; 
+  }
+
+  .plot-container-right, .plot-container-left, .text-container-right, .text-container-left {
+    width: 100%;
+    /* padding-top: 75%; */
+  }
+}
